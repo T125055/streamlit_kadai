@@ -18,6 +18,7 @@ years = sorted(df_long['年'].unique())
 
 with st.sidebar:
     # ページリンク
+    st.page_link("app.py", label="clear", icon="▢")
     st.page_link("https://www.e-stat.go.jp/stat-search/files?page=1&query=%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E5%88%A5&layout=dataset&bunya_l=02&year=20250%2C20240%2C20230%2C20220&stat_infid=000040316502&collect_area=000&metadata=1&data=1",
               label="e-Sat data", icon="🌎")
     branch = st.multiselect('都道府県を選択してください（複数選択可）',
