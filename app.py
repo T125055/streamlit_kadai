@@ -7,7 +7,7 @@ df = pd.read_csv('park.csv')
 
 with st.sidebar:
     branch = st.multiselect('公園分類を選択してください（複数選択可）',
-                            df['公園分類'].unique)
+                            df['公園分類'].unique())
     year = st.number_input('年次を選択してください',
                            min_value=df['年'].min(),
                            max_value=df['年'].max(),
