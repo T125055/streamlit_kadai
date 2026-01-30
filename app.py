@@ -3,7 +3,7 @@ import pandas as pd
 
 st.title('都道府県別にみた年別死亡数')
 
-df = pd.read_csv('people.csv')
+df = pd.read_csv('people.csv', encoding='cp932')
 
 df_long = df.melt(
     id_vars='都道府県',
