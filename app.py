@@ -45,12 +45,12 @@ st.bar_chart(df)
 
 if range_mode:
     df2 = df_long.copy
-    df2 =  df_long[df_long['都道府県'].isin(branch)]
+    df2 =  df2[df2['都道府県'].isin(branch)]
     df2 = df2[(df2['年'] >= year_range[0]) &
             (df2['年'] <= year_range[1])]
 
     st.subheader('推移')
-    df_chart = df.pivot(
+    df_chart = df2.pivot(
         index='年',
         columns='都道府県',
         values='死亡数'
