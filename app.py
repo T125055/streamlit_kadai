@@ -39,7 +39,7 @@ df = df[df['年'] == year]
 df.drop('年', axis=1, inplace=True)
 df.set_index('都道府県', inplace=True)
 
-st.subheader(f'{year}年 都道府県別死亡数')
+st.subheader(f'{year}年 都道府県別死亡数 (横軸：都道府県, 縦軸：死亡数(人))')
 st.dataframe(df, width=800, height=200)
 st.bar_chart(df)
 
@@ -49,7 +49,7 @@ if range_mode:
     df2 = df2[(df2['年'] >= year_range[0]) &
             (df2['年'] <= year_range[1])]
 
-    st.subheader('推移')
+    st.subheader(f'{year_range[0]}年～{year_range[1]}年 死亡数推移 (横軸：年, 縦軸：死亡数(人))')
     df_chart = df2.pivot(
         index='年',
         columns='都道府県',
