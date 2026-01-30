@@ -26,6 +26,7 @@ with st.sidebar:
     year = st.selectbox('表示する年を選択してください',
                     years)
     
+    st.divider()
     range_mode = st.checkbox('年の推移を表示する')
     if range_mode:
             year_range = st.slider(label='表示する年の範囲を選択してください',
@@ -46,6 +47,7 @@ st.dataframe(df, width=800, height=200)
 st.bar_chart(df)
 
 if range_mode:
+    st.divider()
     df2 = df_long.copy()
     df2 =  df2[df2['都道府県'].isin(branch)]
     df2 = df2[(df2['年'] >= year_range[0]) &
