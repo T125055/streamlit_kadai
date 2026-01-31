@@ -75,3 +75,4 @@ if range_mode:
     value=f'{end_value:,} 人',
     delta=f'{delta:+,} 人'
     )
+ 
