@@ -29,16 +29,15 @@ with st.sidebar:
     st.divider()
     range_mode = st.checkbox('年の推移を表示する')
     if range_mode:
-            year_range = st.slider(label='表示する年の範囲を選択してください',
-                        min_value= 1975,
-                        max_value= 2024,
+            years = sorted(df_long['年'].unique())
+            year_range = st.select_slider(label='表示する年の範囲を選択してください',
+                        options=years,
                         value=(1990, 2015) )
 
 df = df_long.copy()
 
 df = df[df['都道府県'].isin(branch)]
 df = df[df['年'] == year]
-
 df.drop('年', axis=1, inplace=True)
 df.set_index('都道府県', inplace=True)
 
@@ -46,6 +45,7 @@ st.subheader(f'{year}年 都道府県別死亡数 (横軸：都道府県, 縦軸
 st.dataframe(df, width=800, height=200)
 st.bar_chart(df)
 
+# 推移
 if range_mode:
     st.divider()
     df2 = df_long.copy()
