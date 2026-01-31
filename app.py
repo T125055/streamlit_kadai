@@ -72,7 +72,7 @@ if range_mode:
 
     st.metric(
     label=f'{year_range[0]}年 → {year_range[1]}年の死亡数の増減（選択都道府県合計）',
-    value=f'{year_range[1]:,}年の合計： {end_value:,} 人',
+    value=f'{year_range[1]:}年の合計： {end_value:,} 人',
     delta=f'{delta:+,} 人'
     )
  
